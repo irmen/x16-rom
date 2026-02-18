@@ -333,7 +333,7 @@ GIT_SIGNATURE=$(BUILD_DIR)/../signature.bin
 # Wrapper for findsymbols that escapes the output and guards against non-zero exit codes
 define findsymbols
 $(strip \
-	$(subst $,\$,$(shell ${BUILD_DIR}/../../findsymbols $(1) $(2))) \
+	$(shell ${BUILD_DIR}/../../findsymbols $(1) $(2)) \
 	$(if \
 		$(filter 0,$(firstword $(.SHELLSTATUS) 0)),, \
 		$(error findsymbols failed with exit code $(.SHELLSTATUS)) \

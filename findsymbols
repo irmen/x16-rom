@@ -56,7 +56,7 @@ BEGIN {
 {
 	for (s in symbols) {
 		if (symbols[s] == substr($3,2)) {
-			output[symbols[s]] = "$" substr($2,3)
+			output[symbols[s]] = "\\$" substr($2,3)
 		}
 	}
 }
